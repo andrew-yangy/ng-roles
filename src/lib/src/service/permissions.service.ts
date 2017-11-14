@@ -1,9 +1,8 @@
 import {Injectable} from '@angular/core';
-import {Observable} from "rxjs/Observable";
 import {BehaviorSubject} from "rxjs/BehaviorSubject";
 import {Permission} from "../model/permisssion";
 import {RolesService} from "./roles.service";
-import {AsyncSubject} from "rxjs/AsyncSubject";
+import {Observable} from "rxjs/Rx";
 
 @Injectable()
 export class PermissionsService {
