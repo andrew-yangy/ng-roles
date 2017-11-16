@@ -18,7 +18,7 @@ export class PermissionsService {
     }
     public getPermission(key: string) {
         const filterPermission = (permissions: Permission[]): Permission => {
-            return permissions && permissions.filter(permission => permission.key === key)[0]
+            return permissions && permissions.filter(permission => permission.Key === key)[0]
         }
         return this.getPermissions()
             .map(filterPermission)
@@ -32,10 +32,9 @@ export class PermissionsService {
             if (!permission) {
                 subject.next(true);
             } else {
-                let perm = permission.accessOnly.every(role => {
-                    return roles.includes(role)
-                });
-                subject.next(perm);
+                let accessRoles = permission.AccessRoles ? permission.AccessRoles.some(role => roles.includes(role)) : true;
+                let accessRolesAll = permission.AccessRolesAll ? permission.AccessRolesAll.every(role => roles.includes(role)) : true;              
+                subject.next(accessRoles && accessRolesAll);
             }
         });
         return subject.asObservable();

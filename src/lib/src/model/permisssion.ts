@@ -1,7 +1,7 @@
 export class Permission {
-    key: string
-    accessOnly?: string | string[]
+    Key: string
+    AccessRoles?: string | string[]
     accessExcept?: string | string[]
-    accessOnlyOr?: string[]
-    accessExceptOr?: string[]
+    AccessRolesAll?: string[]
+    accessExceptAll?: string[]
 }

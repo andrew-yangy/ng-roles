@@ -1,7 +1,7 @@
 {
   "name": "ng-roles",
   "version": "1.0.2",
-  "description": "Library QuickStart package.json from the documentation, supplemented with testing support",
+  "description": "Permission control for Angular applications",
   "main": "./bundles/ng-roles.umd.js",
   "module": "./ng-roles.es5.js",
   "es2015": "./ng-roles.js",
